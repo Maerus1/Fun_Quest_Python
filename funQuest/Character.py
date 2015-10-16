@@ -1,12 +1,13 @@
 import Base
 import Weapon
+import Actions
 
 '''
 This program simply allows the user to create Player objects and give him a
 weapon object. You can check the player's stats as well
 '''
 
-class Player(Base.BaseCharacter):
+class Player(Base.BaseCharacter, Actions.Actions):
     def __init__(self, name, weaponName):
         super(Player, self).__init__(name)
         self.weapon = Weapon.Weapon(weaponName)
@@ -15,10 +16,23 @@ class Player(Base.BaseCharacter):
         print(self.name)
         print(self.health)
         print(self.weapon.name)
-
+        
     def attack(self, target):
         target.health -= self.weapon.damage
-        #This is the beginning of my combat system
+        print ("You attack the enemy!")
+        print ("You do " + str(self.weapon.damage) + " damage!")
+        
+        self.health -= target.damage
+        print ("The enemy attacks you!")
+        print ("You take " + str(target.damage) + " damage!")
+
+        print("The enemy has: " + str(target.health) + " health.")
+        print("You have: " + str(self.health) + " health.")
+    #if you do not override at least one(or all?
+    #I'm not sure), then the inheriting class also
+    #becomes abstract
+        
+
 
 '''
 This is a class that will hold the attributes and behaviours of the enemies

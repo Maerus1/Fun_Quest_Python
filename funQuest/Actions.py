@@ -1,5 +1,4 @@
 from abc import ABCMeta, abstractmethod
-import Character
 
 '''
 This module will handle all of the actions for the
@@ -19,7 +18,7 @@ class Actions(metaclass = ABCMeta):
     #pass works for abstract functions
 
     @abstractmethod
-    def talk(self, target):
+    def talk(self, target = ""):
         pass
 
     @abstractmethod

@@ -28,6 +28,18 @@ class Player(Base.BaseCharacter, Actions.Actions):
 
         print("The enemy has: " + str(target.health) + " health.")
         print("You have: " + str(self.health) + " health.")
+
+    def talk(self, target = ""):
+        print("Hello " + str(target) + "!")
+
+    def use(self, item, target):
+        #I'll need to add if statements in here to limit the choice of items
+        print("You used: " + str(item) + " on " + str(target) + "!")
+
+    def pickUp(self, item):
+        #I'll need to have the thing picked up added to the inventory
+        print("You picked up: " + str(item) + "!")
+
     #if you do not override at least one(or all?
     #I'm not sure), then the inheriting class also
     #becomes abstract

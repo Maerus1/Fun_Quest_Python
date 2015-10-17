@@ -17,3 +17,15 @@ class Actions(metaclass = ABCMeta):
     def attack(self, target):
         pass
     #pass works for abstract functions
+
+    @abstractmethod
+    def talk(self, target):
+        pass
+
+    @abstractmethod
+    def use(self, item, target):
+        pass
+
+    @abstractmethod
+    def pickUp(self, item):
+        pass
